@@ -44,7 +44,11 @@ public class Pastelero extends Thread{
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
         System.out.println(horaActual() + " Pastelero: Pastel listo.");
+        synchronized(pastel){
+            pastel.notify();
+        }
 
     }
 

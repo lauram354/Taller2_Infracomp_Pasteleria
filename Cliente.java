@@ -16,7 +16,7 @@ public class Cliente extends Thread{
         System.out.println( horaActual() + " Cliente: Realizando pedido...");
         
         try {
-            int tiempoPedido = 10000 + random.nextInt(10000); 
+            int tiempoPedido = 3000 + random.nextInt(10000); 
             System.out.println("Tiempo de pedido: " + Math.round(tiempoPedido/1000) + " segundos");
             Thread.sleep(tiempoPedido);
         } catch (Exception e) {
@@ -24,6 +24,15 @@ public class Cliente extends Thread{
         }
         System.out.println(horaActual() + " Cliente: Pedido listo.");
         pastel.hacerPedido();
+
+        synchronized(pastel){
+            try {
+                pastel.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(horaActual() + " Cliente: Pastel recibido.");
     }
 
     public String horaActual(){
