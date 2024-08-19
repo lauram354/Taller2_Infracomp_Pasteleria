@@ -13,7 +13,8 @@ public class Cliente extends Thread{
     public void run(){
 
         Random random = new Random();
-        System.out.println("- Cliente: Realizando pedido...");
+        System.out.println( horaActual() + " Cliente: Realizando pedido...");
+        
         try {
             int tiempoPedido = 10000 + random.nextInt(10000); 
             System.out.println("Tiempo de pedido: " + Math.round(tiempoPedido/1000) + " segundos");
@@ -21,7 +22,11 @@ public class Cliente extends Thread{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("- Cliente: Pedido listo.");
+        System.out.println(horaActual() + " Cliente: Pedido listo.");
         pastel.hacerPedido();
+    }
+
+    public String horaActual(){
+        return java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"));
     }
 }

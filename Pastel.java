@@ -16,6 +16,9 @@ public class Pastel {
     }
 
     public synchronized int consultarDetallesPedido() {
+
+        // -1 si no hay pedido aún y 1 si ya está listo 
+        
         if (alto == 0 && radio == 0 && sabor == "" && color == "") {
             return -1;
         } else {
@@ -24,6 +27,8 @@ public class Pastel {
     }
 
     public synchronized void hacerPedido() {
+
+        // Pastel ejemplo
 
         this.alto = 10;
         this.radio = 5;
