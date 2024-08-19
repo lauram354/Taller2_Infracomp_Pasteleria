@@ -13,14 +13,15 @@ public class Cliente extends Thread{
     public void run(){
 
         Random random = new Random();
-        System.out.println("Cliente realizando pedido...");
+        System.out.println("- Cliente: Realizando pedido...");
         try {
             int tiempoPedido = 10000 + random.nextInt(10000); 
-            System.out.println("Tiempo de pedido: " + tiempoPedido + "ms");
+            System.out.println("Tiempo de pedido: " + Math.round(tiempoPedido/1000) + " segundos");
             Thread.sleep(tiempoPedido);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("- Cliente: Pedido listo.");
         pastel.hacerPedido();
     }
 }

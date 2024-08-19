@@ -14,9 +14,9 @@ public class Pastelero extends Thread{
         // Esperar que el cliente termine de crear el pastel
         boolean flag = true;
         while(flag){
-            System.out.println("Pastelero revisando el pedido...");
+            System.out.println("- Pastelero: Revisando el pedido...");
             if(pastel.consultarDetallesPedido() == -1){
-                System.out.println("Aún no hay un pedido para preparar. Esperando...");
+                System.out.println("- Pastelero: Aún no hay un pedido para preparar, volveré a revisar en 5 segundos");
                 try {
                     Thread.sleep(5000);
                 } catch (Exception e) {
@@ -24,22 +24,21 @@ public class Pastelero extends Thread{
                 }
             }
             else{
-                System.out.println("Pedido listo para preparar.");
                 flag = false;
             }
         }
 
         // Preparar pastel
         Random random = new Random();
-        System.out.println("Preparando pastel...");
+        System.out.println("- Pastelero: Preparando pastel...");
         try {
             int tiempoPreparacion = 5000 + random.nextInt(10000); 
-            System.out.println("Tiempo de preparación: " + tiempoPreparacion + "ms");
+            System.out.println("Tiempo de preparación: " + Math.round(tiempoPreparacion/1000) + " segundos");
             Thread.sleep(tiempoPreparacion);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Pastel listo.");
+        System.out.println("- Pastelero: Pastel listo.");
 
     }
 
