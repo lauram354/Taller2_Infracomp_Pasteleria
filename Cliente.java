@@ -1,3 +1,11 @@
-public class Cliente {
+public class Cliente extends Thread{
 
+    public Cliente(){
+
+    }
+
+    @Override
+    public void run(){
+        
+    }
 }
