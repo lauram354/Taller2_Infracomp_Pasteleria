@@ -1,6 +1,3 @@
-import java.util.Scanner;
-import java.util.Random;
-
 public class Pastel {
 
     private int alto;
@@ -18,7 +15,7 @@ public class Pastel {
     public synchronized int consultarDetallesPedido() {
 
         // -1 si no hay pedido aún y 1 si ya está listo 
-        
+
         if (alto == 0 && radio == 0 && sabor == "" && color == "") {
             return -1;
         } else {
