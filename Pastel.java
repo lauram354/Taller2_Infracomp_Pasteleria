@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Pastel {
 
@@ -14,29 +15,20 @@ public class Pastel {
         this.color = color;
     }
 
-    public synchronized Pastel consultarDetallesPedido() {
-        return this;
+    public synchronized int consultarDetallesPedido() {
+        if (alto == 0 && radio == 0 && sabor == "" && color == "") {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
     public synchronized void hacerPedido() {
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Ingrese el alto del pastel: ");
-        alto = scanner.nextInt();
-
-        System.out.println("Ingrese el radio del pastel: ");
-        radio = scanner.nextInt();
-
-        System.out.println("Ingrese el sabor del pastel: ");
-        sabor = scanner.next();
-
-        System.out.println("Ingrese el color del pastel: ");
-        color = scanner.next();
-
-        scanner.close();
-
-        System.out.println("Pedido realizado con éxito.");
+        this.alto = 10;
+        this.radio = 5;
+        this.sabor = "Vainilla";
+        this.color = "Blanco";
 
 
     }
