@@ -3,7 +3,7 @@
 ## Integrantes
 - **Laura Murcia** 202123099
 - **Camilo Quimbay** 202313861
-- **Monica Gonzalez**
+- **Monica Gonzalez** 202116872
   
 
 
