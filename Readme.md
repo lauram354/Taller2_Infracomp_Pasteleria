@@ -3,6 +3,6 @@
 - **Laura Murcia**
 - **Camilo Quimbay**
 - **Monica Gonzalez**
-- 
+  
 
 
